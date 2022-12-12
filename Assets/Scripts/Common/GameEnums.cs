@@ -10,12 +10,20 @@ namespace SpaceDefender
         Player,
         Enemy,
         Laser,
-        DeadZone
+        Collectable
     }
     public enum GameStatus
     {
         Menu,
         Playing,
         GameOver
+    }
+    public enum Direction 
+    {
+        None, 
+        Left,
+        Right,
+        Up,
+        Down
     }
 }

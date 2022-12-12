@@ -6,11 +6,8 @@ namespace SpaceDefender.Enemy
 {
     [RequireComponent(typeof(Collider2D))]
     public class EnemyController : MonoBehaviour
-    {
-        [SerializeField] private float speed = 5f;
+    {     
 
-        private void Update() => Movement();
-        private void Movement()=> transform.Translate(Vector3.down * speed * Time.deltaTime);
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag(GameTags.Player.ToString()))

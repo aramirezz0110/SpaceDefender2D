@@ -71,6 +71,10 @@ namespace SpaceDefender.Player
             {
                 GameManager.Instance?.GameOver();
             }
+            if (collision.gameObject.CompareTag(GameTags.Collectable.ToString()))
+            {
+                GameManager.Instance?.CoinCollectedPoints();
+            }
         }
     } 
 }
