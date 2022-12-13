@@ -19,5 +19,6 @@ namespace SpaceDefender.Enemy
                 Destroy(gameObject);
             }
         }
-    }
+        private void OnDestroy() => GameAudioManager.Instance?.PlayExplosionSounds();
+    }    
 }

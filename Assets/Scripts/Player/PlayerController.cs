@@ -16,7 +16,8 @@ namespace SpaceDefender.Player
         [Header("MOVEMENT CONFIG")]
         [SerializeField] private float verticalLimit = 4f;
         [SerializeField] private float horizontalLimit = 4f;
-        
+        [Header("SCRIPT REFERENCES")]
+        [SerializeField] private PlayerAudio playerAudio;
 
         private float horizontalInput;
         private float verticalInput;
@@ -55,6 +56,7 @@ namespace SpaceDefender.Player
             {
                 canFire = Time.time + fireRate;
                 InstantiateLaser();
+                playerAudio?.PlayLaserSound();
             }
         }
         private void InstantiateLaser()
@@ -68,12 +70,14 @@ namespace SpaceDefender.Player
         {
             if (collision.gameObject.CompareTag(GameTags.Enemy.ToString()))
             {
-                GameManager.Instance?.GameOver();
+                playerAudio?.PlayExplosionSound();
+                GameManager.Instance?.GameOver();               
             }
             if (collision.gameObject.CompareTag(GameTags.Collectable.ToString()))
             {
                 GameManager.Instance?.CoinCollectedPoints();
                 Destroy(collision.gameObject);
+                playerAudio?.PlayPowerUpSound();
             }
         }
     } 
