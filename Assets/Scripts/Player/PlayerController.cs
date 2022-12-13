@@ -17,7 +17,7 @@ namespace SpaceDefender.Player
         [SerializeField] private float verticalLimit = 4f;
         [SerializeField] private float horizontalLimit = 4f;
         [Header("SCRIPT REFERENCES")]
-        [SerializeField] private PlayerAudio playerAudio;
+        [SerializeField] private PlayerAudio playerAudio;        
 
         private float horizontalInput;
         private float verticalInput;
