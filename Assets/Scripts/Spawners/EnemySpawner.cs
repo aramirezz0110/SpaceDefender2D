@@ -6,7 +6,6 @@ namespace SpaceDefender.Spawning
 {
     public class EnemySpawner : Spawner
     {
-
-        
+                
     }
 }

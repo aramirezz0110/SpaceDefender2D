@@ -8,13 +8,12 @@ namespace SpaceDefender
     {
         public static GameManager Instance;
 
-        [Header("Spawners")]
+        [Header("SPAWNER REFERENCES")]
         [SerializeField] private Spawner[] spawners;
-
-        private GameStatus gameStatus;
+        [Header("SCRIPTS REFERENCES")]
+        [SerializeField] private GameUIManager gameUIManager;
+                
         private int score;
-
-        
 
         private void Awake()
         {
@@ -22,6 +21,11 @@ namespace SpaceDefender
                 Instance = this;
             else
                 Destroy(gameObject);
+        }
+        private void Start()
+        {
+            PlayGame();
+            gameUIManager?.UpdateScore(score);
         }
         public void PlayGame()
         {
@@ -32,18 +36,31 @@ namespace SpaceDefender
         {
             Time.timeScale = 0f;
             StopSpawning();
+            gameUIManager?.GameOver();
+        }        
+        public void EnemyDestroyedPoints()
+        {
+            score += 8;
+            gameUIManager?.UpdateScore(score);
         }
-        
-        public void EnemyDestroyedPoints() => score += 8;
-        public void CoinCollectedPoints() => score += 5;
-
+        public void CoinCollectedPoints()
+        {
+            score += 5;
+            gameUIManager?.UpdateScore(score);
+        }
         private void StartSpawning()
         {
-            
+            foreach (Spawner spawner in spawners)
+            {
+                spawner.StartSpawning();
+            }
         }
         private void StopSpawning()
         {
-            
+            foreach (Spawner spawner in spawners)
+            {
+                spawner.StopSpawning();
+            }
         }
     }
 }

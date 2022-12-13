@@ -63,7 +63,6 @@ namespace SpaceDefender.Player
 
             GameObject tempLaser = Instantiate(laserPrefab);
             tempLaser.transform.position = transform.position;
-            tempLaser.transform.parent = laserParent;
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -74,6 +73,7 @@ namespace SpaceDefender.Player
             if (collision.gameObject.CompareTag(GameTags.Collectable.ToString()))
             {
                 GameManager.Instance?.CoinCollectedPoints();
+                Destroy(collision.gameObject);
             }
         }
     } 
