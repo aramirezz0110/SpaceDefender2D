@@ -36,7 +36,12 @@ namespace SpaceDefender
         {
             Time.timeScale = 0f;
             StopSpawning();
-            gameUIManager?.GameOver();
+            gameUIManager?.GameOver(score);
+            
+            if(score> PlayerPrefs.GetInt(PlayerPrefsRefs.BestScore))
+            {
+                PlayerPrefs.SetInt(PlayerPrefsRefs.BestScore, score);
+            }
         }        
         public void EnemyDestroyedPoints()
         {

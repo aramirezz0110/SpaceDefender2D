@@ -41,6 +41,7 @@ namespace SpaceDefender.UI
             closeAppButton?.onClick.AddListener(()=>ActivatePanel(closeAppPanel));
 
             backToMainMenu1?.onClick.AddListener(() => ActivatePanel(mainPanel));
+            restoreBestScore?.onClick.AddListener(RestoreBestScore);
 
             backToMainMenu2?.onClick.AddListener(() => ActivatePanel(mainPanel));
 
@@ -57,6 +58,11 @@ namespace SpaceDefender.UI
         private void LoadBestScore() => 
             bestScoreText.text ="BEST SCORE: "+PlayerPrefs.GetInt(PlayerPrefsRefs.BestScore,0);
 
+        private void RestoreBestScore()
+        {
+            PlayerPrefs.SetInt(PlayerPrefsRefs.BestScore, 0);
+            LoadBestScore();
+        }
         private void CloseApp() => Application.Quit();
     }
 }

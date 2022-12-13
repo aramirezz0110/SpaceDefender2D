@@ -12,7 +12,7 @@ namespace SpaceDefender.Enemy
         private void Start()
         {
             int randomMovement = Random.Range(0, 100);
-            if (randomMovement<25)
+            if (randomMovement<50)
             {
                 player = FindObjectOfType<PlayerController>().gameObject;
             }            

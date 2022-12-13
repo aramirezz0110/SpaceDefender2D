@@ -16,9 +16,9 @@ namespace SpaceDefender.Enemy
             if (collision.gameObject.CompareTag(GameTags.Laser.ToString()))
             {
                 GameManager.Instance?.EnemyDestroyedPoints();
+                GameAudioManager.Instance?.PlayExplosionSounds();
                 Destroy(gameObject);
             }
         }
-        private void OnDestroy() => GameAudioManager.Instance?.PlayExplosionSounds();
     }    
 }

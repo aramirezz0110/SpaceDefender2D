@@ -16,18 +16,16 @@ namespace SpaceDefender
         [Header("HUD PANEL ELEMENTS")]
         [SerializeField] private TMP_Text scoreText;
 
-        
-        private void Start()
-        {
-            ActivatePanel(hudPanel);
-        }
+        [Header("GAME OVER PANEL ELEMENTS")]
+        [SerializeField] private TMP_Text bestScoreText;
 
+        private void Start()=> ActivatePanel(hudPanel);
         public void UpdateScore(int score) => scoreText.text ="SCORE: "+score;
-        public void GameOver()
+        public void GameOver(int bestScore=0)
         {
             ActivatePanel(gameOverPanel);
+            bestScoreText.text = "Your score is: "+bestScore;
         }
-
         private void ActivatePanel(GameObject panel)
         {            
             hudPanel?.SetActive(hudPanel.name.Equals(panel.name));
