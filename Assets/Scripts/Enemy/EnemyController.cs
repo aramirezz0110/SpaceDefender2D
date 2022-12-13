@@ -6,7 +6,7 @@ namespace SpaceDefender.Enemy
 {
     [RequireComponent(typeof(Collider2D))]
     public class EnemyController : MonoBehaviour
-    {
+    {        
         [SerializeField] private GameObject explosionPrefab;
         private bool explosionInstantiated;
         private void OnTriggerEnter2D(Collider2D collision)

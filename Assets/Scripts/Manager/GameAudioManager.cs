@@ -10,6 +10,8 @@ namespace SpaceDefender
         
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private AudioClip explosionSound;
+        [SerializeField] private AudioClip laserSound;
+
 
         private void Awake()
         {
@@ -20,5 +22,7 @@ namespace SpaceDefender
         }
 
         public void PlayExplosionSounds() => audioSource?.PlayOneShot(explosionSound);
+        public void PlayLaserSounds() => audioSource?.PlayOneShot(laserSound);
+
     }
 }

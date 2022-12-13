@@ -192,7 +192,7 @@ MonoBehaviour:
   laserPrefab: {fileID: 1470284063710567830, guid: e122fe57d8cdf1e44b594728f55ecd0b, type: 3}
   verticalLimit: 4
   horizontalLimit: 8
-  playerAudio: {fileID: 0}
+  playerAudio: {fileID: 6551224963400393346}
 --- !u!114 &2065341455703412080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4183433848782585705}
   laserAudioClip: {fileID: 8300000, guid: b18e8e7c191ff0442b9d7cb5c29b4f15, type: 3}
+  powerUpAudioClip: {fileID: 8300000, guid: dafae364896b6bf4f83d7efdfb767d6d, type: 3}
+  explosionAudioClip: {fileID: 8300000, guid: 61b2d316bac1e104aae02d2b771100f7, type: 3}
 --- !u!1 &5037318093154313120
 GameObject:
   m_ObjectHideFlags: 0

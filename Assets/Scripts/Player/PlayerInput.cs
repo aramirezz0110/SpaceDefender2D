@@ -17,8 +17,6 @@ namespace SpaceDefender.Player
 
             playerController.HorizontalInput = Input.GetAxis(Horizontal);
             playerController.VerticalInput = Input.GetAxis(Vertical);
-
-            playerController.IsShooting = Input.GetKey(KeyCode.Space);
         }
     }
 }
